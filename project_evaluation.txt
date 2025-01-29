@@ -1,0 +1,11 @@
+What will be evaluated in your reports?
+
+* Logbook 	(steps, difficulties, resolutions)
+* Models	(design presentation and explanation of your choices)
+* Tests		(JAVA Scenario, test plan, results)
+* Controller	(law choices, test)
+* Discussion of results
+* Introduction, conclusion, perspectives...
+
+
+This was really nice to get now :DD
