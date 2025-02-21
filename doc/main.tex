@@ -8,12 +8,14 @@
 \usepackage{graphicx, placeins, subfig, float, floatflt, wrapfig}         % Required for inserting images
 \usepackage{amsmath,amsfonts,amssymb, bm} % math
 \usepackage{siunitx}                   % typing values with units
-\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
 \usepackage{tabto}                     % tabs on title page
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}  %blue links for titlepage :3
 \usepackage{parskip} % paragraph changing
 \usepackage[printonlyused, smaller]{acronym}
 \usepackage{dsfont}
+
+\usepackage{tabluarx} % special tables
 
 \usepackage{lipsum} % sample text
 \usepackage{listings} % Including code into file
@@ -68,11 +70,12 @@
 
 % content chapters
 \pagenumbering{arabic}
-\include{Text/0}
 \include{Text/1}
-%\include{Text/2}
-%\include{Text/3}
-%\include{Text/4}
+\include{Text/2}
+\include{Text/3}
+\include{Text/4}
+\include{Text/5}
+\include{Text/6}
 
 % REFERENCES
 \addcontentsline{toc}{section}{References}
