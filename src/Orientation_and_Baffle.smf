@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="simtg.simmf.modeldefinition.1.1" xmlns:_1="smfnotation" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <ModelDefinitionDocument xmi:id="_vUy60POPEe-xNofk1IfsiQ">
+    <modelDefinition xmi:type="ModelDefinition" xmi:id="_vUy60fOPEe-xNofk1IfsiQ" name="Orientation_and_Baffle">
+      <typeNotation xmi:type="_1:TypeNotation" xmi:id="_vUy60vOPEe-xNofk1IfsiQ">
+        <color xmi:type="_1:Color" xmi:id="_vUy60_OPEe-xNofk1IfsiQ" red="192" green="192" blue="192"/>
+      </typeNotation>
+      <properties xmi:type="DataDef" xmi:id="_xNPqMPOPEe-xNofk1IfsiQ" name="u_sun_CSS" propCategory="OUTPUT" defaultValue="0.0 0.0 0.0">
+        <size>3</size>
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_xNQ4UvOPEe-xNofk1IfsiQ" side="EAST"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_yvbOoPOPEe-xNofk1IfsiQ" name="u_sun_SC" propCategory="INPUT" defaultValue="0.0 0.0 0.0">
+        <size>3</size>
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_yvb1t_OPEe-xNofk1IfsiQ"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_2KUBIPOPEe-xNofk1IfsiQ" name="k" propCategory="OUTPUT" defaultValue="0.0 0.0 0.0 0.0">
+        <size>4</size>
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_2KUBKPOPEe-xNofk1IfsiQ" side="EAST" order="1"/>
+      </properties>
+      <functions xmi:type="FuncDef" xmi:id="_vUy61POPEe-xNofk1IfsiQ" name="step" description="Default step method" throwException="simtg::Exception" visibility="PUBLIC" schedulable="true"/>
+    </modelDefinition>
+  </ModelDefinitionDocument>
+  <notation:Diagram xmi:id="_vUy61fOPEe-xNofk1IfsiQ" type="Simmf" element="_vUy60POPEe-xNofk1IfsiQ" name="Orientation_and_Baffle.smf" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_veTcIPOPEe-xNofk1IfsiQ" type="2001" element="_vUy60fOPEe-xNofk1IfsiQ" fontName="Ubuntu" fontHeight="12" bold="true" fillColor="12632256">
+      <children xmi:type="notation:DecorationNode" xmi:id="_veUDMPOPEe-xNofk1IfsiQ" type="5003"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_veUDMfOPEe-xNofk1IfsiQ" type="7001"/>
+      <children xmi:type="notation:Node" xmi:id="_xNQRQPOPEe-xNofk1IfsiQ" type="3004" element="_xNPqMPOPEe-xNofk1IfsiQ">
+        <children xmi:type="notation:DecorationNode" xmi:id="_xNQ4UPOPEe-xNofk1IfsiQ" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_xNQ4UfOPEe-xNofk1IfsiQ" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_xNQRQfOPEe-xNofk1IfsiQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_xNQRQvOPEe-xNofk1IfsiQ" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_xNQRQ_OPEe-xNofk1IfsiQ" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xNQRRPOPEe-xNofk1IfsiQ" x="399" y="56"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_yvb1sPOPEe-xNofk1IfsiQ" type="3004" element="_yvbOoPOPEe-xNofk1IfsiQ">
+        <children xmi:type="notation:DecorationNode" xmi:id="_yvb1tfOPEe-xNofk1IfsiQ" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_yvb1tvOPEe-xNofk1IfsiQ" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_yvb1sfOPEe-xNofk1IfsiQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_yvb1svOPEe-xNofk1IfsiQ" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_yvb1s_OPEe-xNofk1IfsiQ" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yvb1tPOPEe-xNofk1IfsiQ" x="-11" y="111"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_2KUBIfOPEe-xNofk1IfsiQ" type="3004" element="_2KUBIPOPEe-xNofk1IfsiQ">
+        <children xmi:type="notation:DecorationNode" xmi:id="_2KUBJvOPEe-xNofk1IfsiQ" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_2KUBJ_OPEe-xNofk1IfsiQ" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_2KUBIvOPEe-xNofk1IfsiQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_2KUBI_OPEe-xNofk1IfsiQ" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_2KUBJPOPEe-xNofk1IfsiQ" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2KUBJfOPEe-xNofk1IfsiQ" x="399" y="104"/>
+      </children>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_veTcIfOPEe-xNofk1IfsiQ" x="100" y="100"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_vUy61vOPEe-xNofk1IfsiQ"/>
+  </notation:Diagram>
+</xmi:XMI>
