@@ -14,10 +14,6 @@
         <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
         <portNotation xmi:type="_1:PortNotation" xmi:id="_gIQR59NTEe-HHfwhf86eRQ" side="EAST"/>
       </properties>
-      <properties xmi:type="DataDef" xmi:id="_iNKI4NNTEe-HHfwhf86eRQ" name="e" propCategory="INPUT" defaultValue="false">
-        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#bool"/>
-        <portNotation xmi:type="_1:PortNotation" xmi:id="_iNLXAtNTEe-HHfwhf86eRQ" order="3"/>
-      </properties>
       <properties xmi:type="DataDef" xmi:id="_eOUGgN5QEe-WEeJAkschMg" name="k" propCategory="INPUT" defaultValue="0.0 0.0 0.0 0.0">
         <size>4</size>
         <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
@@ -26,6 +22,10 @@
       <properties xmi:type="DataDef" xmi:id="_P-ZucPOJEe-xNYfk1IfsiQ" name="axis" propCategory="INPUT" defaultValue="0">
         <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#int"/>
         <portNotation xmi:type="_1:PortNotation" xmi:id="_P-d_4POJEe-xNYfk1IfsiQ" order="2"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_UsEAUPOdEe-zzqiqp1XU_Q" name="e" propCategory="INPUT" defaultValue="0">
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#int"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_UsHDofOdEe-zzqiqp1XU_Q" order="3"/>
       </properties>
       <functions xmi:type="FuncDef" xmi:id="_bDafA9NTEe-HHfwhf86eRQ" name="step" description="Default step method" throwException="simtg::Exception" visibility="PUBLIC" schedulable="true"/>
     </modelDefinition>
@@ -52,15 +52,6 @@
         <styles xmi:type="notation:FillStyle" xmi:id="_gIQR49NTEe-HHfwhf86eRQ" fillColor="12632256"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gIQR5NNTEe-HHfwhf86eRQ" x="399" y="111"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_iNKv8NNTEe-HHfwhf86eRQ" type="3004" element="_iNKI4NNTEe-HHfwhf86eRQ">
-        <children xmi:type="notation:DecorationNode" xmi:id="_iNLXANNTEe-HHfwhf86eRQ" type="5005">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_iNLXAdNTEe-HHfwhf86eRQ" y="5"/>
-        </children>
-        <styles xmi:type="notation:DescriptionStyle" xmi:id="_iNKv8dNTEe-HHfwhf86eRQ"/>
-        <styles xmi:type="notation:FontStyle" xmi:id="_iNKv8tNTEe-HHfwhf86eRQ" fontName="Ubuntu"/>
-        <styles xmi:type="notation:FillStyle" xmi:id="_iNKv89NTEe-HHfwhf86eRQ" fillColor="12632256"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNKv9NNTEe-HHfwhf86eRQ" x="-11" y="212"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_eOZmEN5QEe-WEeJAkschMg" type="3004" element="_eOUGgN5QEe-WEeJAkschMg">
         <children xmi:type="notation:DecorationNode" xmi:id="_eOaNIN5QEe-WEeJAkschMg" type="5005">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_eOaNId5QEe-WEeJAkschMg" y="5"/>
@@ -78,6 +69,15 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_P-dY0vOJEe-xNYfk1IfsiQ" fontName="Ubuntu"/>
         <styles xmi:type="notation:FillStyle" xmi:id="_P-dY0_OJEe-xNYfk1IfsiQ" fillColor="12632256"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-dY1POJEe-xNYfk1IfsiQ" x="-11" y="179"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_UsGckPOdEe-zzqiqp1XU_Q" type="3004" element="_UsEAUPOdEe-zzqiqp1XU_Q">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UsGclfOdEe-zzqiqp1XU_Q" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_UsHDoPOdEe-zzqiqp1XU_Q" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_UsGckfOdEe-zzqiqp1XU_Q"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_UsGckvOdEe-zzqiqp1XU_Q" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_UsGck_OdEe-zzqiqp1XU_Q" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UsGclPOdEe-zzqiqp1XU_Q" x="-11" y="233"/>
       </children>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bNeZ8dNTEe-HHfwhf86eRQ" x="100" y="100"/>
     </children>

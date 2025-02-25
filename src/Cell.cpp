@@ -53,15 +53,23 @@ void Cell::step() throw (simtg::Exception) {
 	float alpha = 22 * (M_PI / 180);		// sunsensor angle, converted to rad
 	float I_max = 31 / 1000;			// max current in [A]
 	float v = 9.6;						// largest incident coeff [-]
-	float N_CSS = 2.3 * pow(10, -10)	// Noise coefficient
-	float N = static_cast<float>(rand())
-			/ (static_cast<float>(RAND_MAX / N_CSS)); // Noise
+	//float N_CSS = 2.3 * pow(10, -10);	// Noise coefficient
+	//float N = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / N_CSS)); // Noise
+	float N = 0.0;
 
 	float n[4][3];
-	n[0] = {sin(alpha), cos(alpha), 0};		// +Y
-	n[1] = {sin(alpha), -cos(alpha), 0};	// -Y
-	n[2] = {sin(alpha), 0, cos(alpha)};		// +Z
-	n[3] = {sin(alpha), 0, -cos(alpha)};	// -Z
+	n[0][0] = sin(alpha);
+	n[0][1] = cos(alpha);
+	n[0][2] = 0;
+	n[1][0] = sin(alpha);
+	n[1][1] = -cos(alpha);
+	n[1][2] = 0;
+	n[2][0] = sin(alpha);
+	n[2][1] = 0;
+	n[2][2] = cos(alpha);
+	n[3][0] = sin(alpha);
+	n[3][1] = 0;
+	n[3][2] = -cos(alpha);
 
 	float dotProd = (_u_sun[0] * n[_axis][0]) + (_u_sun[1] * n[_axis][1])
 			+ (_u_sun[2] * n[_axis][2]);

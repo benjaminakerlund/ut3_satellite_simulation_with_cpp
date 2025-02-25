@@ -57,7 +57,7 @@ public:
 	/**
 	 [INPUT] 
 	 */
-	simtg::AsyncBool _e;
+	simtg::AsyncInt _e;
 	Cell* _Cell_Y_minus;
 	Cell* _Cell_Y_plus;
 	Cell* _Cell_Z_plus;
@@ -195,5 +195,5 @@ public:
 //add user defined code here
 /*PROTECTED REGION END*/
 
-#endif //end __CSS__HPP
+#endif //end __CSS.HPP__H  
 

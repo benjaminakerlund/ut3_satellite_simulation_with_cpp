@@ -247,7 +247,7 @@ void CSS::initDefaultValues() {
 	for (int row = 0; row < 3; row++) {
 		_u_sun_SC[row] = 0.0;
 	}
-	_e = false;
+	_e = 0;
 
 	initSubModelsDefaultValues();
 

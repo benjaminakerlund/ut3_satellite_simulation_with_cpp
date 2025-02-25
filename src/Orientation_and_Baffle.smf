@@ -15,7 +15,7 @@
         <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
         <portNotation xmi:type="_1:PortNotation" xmi:id="_yvb1t_OPEe-xNofk1IfsiQ"/>
       </properties>
-      <properties xmi:type="DataDef" xmi:id="_2KUBIPOPEe-xNofk1IfsiQ" name="k" propCategory="OUTPUT" defaultValue="0.0 0.0 0.0 0.0">
+      <properties xmi:type="DataDef" xmi:id="_2KUBIPOPEe-xNofk1IfsiQ" name="k" propCategory="OUTPUT" defaultValue="1 1 1 1">
         <size>4</size>
         <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
         <portNotation xmi:type="_1:PortNotation" xmi:id="_2KUBKPOPEe-xNofk1IfsiQ" side="EAST" order="1"/>

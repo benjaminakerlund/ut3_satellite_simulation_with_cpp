@@ -51,7 +51,7 @@ void CSS::serializeExt(simtg::SerializationStream& stream_)
 }
 void CSS::step() throw (simtg::Exception) {
 	/*PROTECTED REGION ID(_7RfoRPONEe-xNYfk1IfsiQ) ENABLED START*/
-	//add user defined code here
+
 	/*PROTECTED REGION END*/
 
 }

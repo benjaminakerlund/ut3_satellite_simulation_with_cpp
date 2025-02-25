@@ -173,5 +173,5 @@ public:
 //add user defined code here
 /*PROTECTED REGION END*/
 
-#endif //end __ORIENTATION_AND_BAFFLE__HPP
+#endif //end __ORIENTATION_AND_BAFFLE.HPP__H  
 

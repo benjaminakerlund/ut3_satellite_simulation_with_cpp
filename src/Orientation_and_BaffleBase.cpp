@@ -179,7 +179,7 @@ void Orientation_and_Baffle::initDefaultValues() {
 		_u_sun_SC[row] = 0.0;
 	}
 	for (int row = 0; row < 4; row++) {
-		_k[row] = 0.0;
+		_k[row] = 1;
 	}
 
 	initSubModelsDefaultValues();

@@ -49,7 +49,17 @@ void Orientation_and_Baffle::serializeExt(simtg::SerializationStream& stream_)
 }
 void Orientation_and_Baffle::step() throw (simtg::Exception) {
 	/*PROTECTED REGION ID(_vUy61POPEe-xNofk1IfsiQ) ENABLED START*/
-	//add user defined code here
+
+	// Convert reference frame
+	_u_sun_CSS[0] = -_u_sun_SC[2];
+	_u_sun_CSS[1] = _u_sun_SC[1];
+	_u_sun_CSS[2] = _u_sun_SC[0];
+
+	// No baffle implementation yet, k=1
+	//simtg::AsyncData<float> k = { 1, 1, 1, 1 };
+	//_k = k;
+	// Above does not work, set k value as default to 1, 1, 1, 1 in .smf model.
+
 	/*PROTECTED REGION END*/
 
 }

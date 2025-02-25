@@ -39,10 +39,6 @@ public:
 	 */
 	simtg::AsyncFloat _I_cell;
 	/**
-	 [INPUT] 
-	 */
-	simtg::AsyncBool _e;
-	/**
 	 [INPUT]  [4]
 	 */
 	simtg::AsyncFloat _k;
@@ -50,6 +46,10 @@ public:
 	 [INPUT] 
 	 */
 	simtg::AsyncInt _axis;
+	/**
+	 [INPUT] 
+	 */
+	simtg::AsyncInt _e;
 
 private:
 	/**
@@ -182,5 +182,5 @@ public:
 //add user defined code here
 /*PROTECTED REGION END*/
 
-#endif //end __CELL__HPP
+#endif //end __CELL.HPP__H  
 
