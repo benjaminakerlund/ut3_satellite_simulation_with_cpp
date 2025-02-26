@@ -29,6 +29,10 @@ Orientation_and_Baffle::Orientation_and_Baffle(Smp::String8 name_,
 		AsyncModelBase(name_, parent_, description_), _u_sun_CSS("u_sun_CSS", 3,
 				1, "-", simtg::OUTPUT, &_data, this, 0), _u_sun_SC("u_sun_SC",
 				3, 1, "-", simtg::INPUT, &_data, this, 0), _k("k", 4, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a0("a0", 1, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a1("a1", 1, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a2("a2", 1, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a3("a3", 1, 1, "-",
 				simtg::OUTPUT, &_data, this, 0)
 
 /*PROTECTED REGION ID(_vUy60fOPEe-xNofk1IfsiQ_defConst_constructor_init) ENABLED START*/
@@ -56,6 +60,10 @@ Orientation_and_Baffle::Orientation_and_Baffle(Smp::String8 name_,
 		AsyncModelBase(name_, description_, parent_), _u_sun_CSS("u_sun_CSS", 3,
 				1, "-", simtg::OUTPUT, &_data, this, 0), _u_sun_SC("u_sun_SC",
 				3, 1, "-", simtg::INPUT, &_data, this, 0), _k("k", 4, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a0("a0", 1, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a1("a1", 1, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a2("a2", 1, 1, "-",
+				simtg::OUTPUT, &_data, this, 0), _a3("a3", 1, 1, "-",
 				simtg::OUTPUT, &_data, this, 0)
 
 /*PROTECTED REGION ID(_vUy60fOPEe-xNofk1IfsiQ_namedConst_constructor_init) ENABLED START*/
@@ -181,6 +189,10 @@ void Orientation_and_Baffle::initDefaultValues() {
 	for (int row = 0; row < 4; row++) {
 		_k[row] = 1;
 	}
+	_a0 = 0;
+	_a1 = 0;
+	_a2 = 0;
+	_a3 = 0;
 
 	initSubModelsDefaultValues();
 

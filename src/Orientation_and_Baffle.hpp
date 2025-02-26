@@ -41,6 +41,22 @@ public:
 	 [OUTPUT]  [4]
 	 */
 	simtg::AsyncFloat _k;
+	/**
+	 [OUTPUT] 
+	 */
+	simtg::AsyncInt _a0;
+	/**
+	 [OUTPUT] 
+	 */
+	simtg::AsyncInt _a1;
+	/**
+	 [OUTPUT] 
+	 */
+	simtg::AsyncInt _a2;
+	/**
+	 [OUTPUT] 
+	 */
+	simtg::AsyncInt _a3;
 
 private:
 	/**

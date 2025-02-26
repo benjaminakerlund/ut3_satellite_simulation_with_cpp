@@ -60,6 +60,12 @@ void Orientation_and_Baffle::step() throw (simtg::Exception) {
 	//_k = k;
 	// Above does not work, set k value as default to 1, 1, 1, 1 in .smf model.
 
+	// axis outputs
+	_a0 = 0;
+	_a1 = 1;
+	_a2 = 2;
+	_a3 = 3;
+
 	/*PROTECTED REGION END*/
 
 }

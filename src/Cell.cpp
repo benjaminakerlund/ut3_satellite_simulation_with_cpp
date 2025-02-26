@@ -51,7 +51,7 @@ void Cell::serializeExt(simtg::SerializationStream& stream_)
 void Cell::step() throw (simtg::Exception) {
 	/*PROTECTED REGION ID(_bDafA9NTEe-HHfwhf86eRQ) ENABLED START*/
 	float alpha = 22 * (M_PI / 180);		// sunsensor angle, converted to rad
-	float I_max = 31 / 1000;			// max current in [A]
+	float I_max = 31.0 / 1000;			// max current in [A]
 	float v = 9.6;						// largest incident coeff [-]
 	//float N_CSS = 2.3 * pow(10, -10);	// Noise coefficient
 	//float N = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / N_CSS)); // Noise

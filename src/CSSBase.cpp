@@ -222,6 +222,14 @@ void CSS::connectData() throw (Smp::IModel::InvalidModelState) {
 		this->getInput("e").connect(&_Cell_Y_minus->getInput("e"));
 		this->getInput("e").connect(&_Cell_Z_plus->getInput("e"));
 		this->getInput("e").connect(&_Cell_Z_minus->getInput("e"));
+		_Orientation_and_Baffle->getOutput("a0").connect(
+				&_Cell_Y_plus->getInput("axis"));
+		_Orientation_and_Baffle->getOutput("a1").connect(
+				&_Cell_Y_minus->getInput("axis"));
+		_Orientation_and_Baffle->getOutput("a2").connect(
+				&_Cell_Z_plus->getInput("axis"));
+		_Orientation_and_Baffle->getOutput("a3").connect(
+				&_Cell_Z_minus->getInput("axis"));
 
 		/*PROTECTED REGION ID(_7RfoQfONEe-xNYfk1IfsiQ_connectData_catching) ENABLED START*/
 		//add user defined code here

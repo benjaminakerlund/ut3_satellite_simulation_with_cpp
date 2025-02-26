@@ -40,13 +40,13 @@ public class TestCSS extends BaseTest {
 		// TEST 2
 		System.out.println("\n============ Test 2: real values for u, e = 0 START ============");
 		// PARAMETERS
-		float test2[] = { 1, 1, 1 };
+		float test2[] = { 1, 0, 1 };
 		sim.writeFloatArray("o.In.u_sun_SC", test2);
 		sim.writeInt("o.In.e", e);
 		sim.timeStep(1.);
 		// INPUTS DESC.
 		System.out.println("Beginning test with the following inputs: \n" 
-				+ "u_sun:\t{ 1, 1, 1 }\n" + "e:\t" + e);
+				+ "u_sun:\t{ 1, 0, 0 }\n" + "e:\t" + e);
 		// TEST CASE
 		if(
 			sim.checkFloat("o.Out.Current_Y_plus", 0) &&
@@ -68,7 +68,7 @@ public class TestCSS extends BaseTest {
 		sim.timeStep(1.);
 		// INPUTS DESC.
 		System.out.println("Beginning test with the following inputs: \n" 
-				+ "u_sun:\t{ 1, 1, 1 }\n" + "e:\t" + e3);
+				+ "u_sun:\t{ 1, 0, 0 }\n" + "e:\t" + e3);
 		// TEST CASE
 		if(
 			sim.checkFloat("o.Out.Current_Y_plus", 0) &&
