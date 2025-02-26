@@ -1,9 +1,275 @@
 \begin{appendices}
 
-\section{Python code used for analysis of measurements}
-\label{sec:appendix_a}
+\section{Logbook}
+\label{sec:logbook}
 
-\lstinputlisting[frame=single, language=Python, numbers=left]{calculatonator.py}
+\begin{table}[H]
+\centering
+    \begin{tabularx}{\textwidth} {
+    | >{\hsize=0.45\hsize}X     % Date
+    | >{\hsize=0.2\hsize}X     % Time
+    | >{\hsize=0.4\hsize}X      % Activity
+    | >{\hsize=1.95\hsize}X      % Remarks
+    |}
+    \hline
+    \textbf{Date} & \textbf{Time} & \textbf{Activity} & \textbf{Remarks} \\ \hline\hline
+        2025-10-02 & 2h & Lecture  & Introduction to course. C++ basics \\ \hline
+        
+        2025-10-30 & 2h & Lecture  &  Object Oriented Programming \\ \hline
+        
+        2025-11-20 & 2h & Lecture  & Pointers, References and Const \\ \hline
+        
+        2025-11-27 & 4h & Lecture  & Polymorphism \& Inheritance. Template Class and STL.  \\ \hline
+        
+        2025-12-11 & 4h & Lecture \& Exercise  & Lecture on Satellite Simulation. Began installing Ubuntu 16.04.07 with \textit{Oracle VM VirtualBox}. \\ \hline
+        
+        2025-12-18 & 4h & Exercise & Setup of Virtual Machine with whole class, problems in extracting the SimTG environment and setting this up on the VM. \\ \hline
+        
+        2025-01-08 & 4h & Exercise & Continuing to work with VM and SimTG, finally getting the environment to work and first example models and tests to run (\texttt{simple} and \texttt{multi}).  \\ \hline
 
+        2025-01-15 & 4h & Exercise & Problems with assigning custom variables, arrays etc. to classes. Problems with \texttt{step()} function and testing how this works. SimTG installation broke on one computer, needed to reinstall everything. \\ \hline
+        
+        2025-01-20 & 4h & Exercise & Began working on model for solar cell, still some problems with creating new projects in SimTG. Decided to just use template project (\texttt{Add}) with template files/models (\texttt{simple} and \texttt{multi}) and develop our simulation directly in this project folder to avoid problems with importing libraries etc.     
+        \\ \hline
+        
+        2025-01-29 & 4h & Exercise & Last session in class.  \\ \hline
+        
+        Dates?     && Independent work & \\ \hline
+
+        2025-02-21 & 4h & Independent work & Finishing touches on Cell model + creating report file. \\ \hline
+
+        2025-02-25 & 8h & Independent work & Creation of CSS model + work on report. Problems with building project in SimTG... Creating testfiles for Cell and CSS. \\ \hline
+        
+        2025-02-28 & 2h & Exam &  \\ \hline
+    \end{tabularx}
+    \begin{tabularx}{\textwidth} {|X|}
+         \hline
+         \textbf{Total hours logged: 36h scheduled + Xh independent work} \\ \hline
+    \end{tabularx}
+
+    
+    \caption{Logbook of work throughout the course.}
+    \label{tab:logbook}
+    
+\end{table}
+
+
+
+
+
+
+\newpage
+\section{Source code for Cell}
+\begin{lstlisting}[frame=single,
+numbers=left, basicstyle=\tiny, language = C++]
+
+/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_impl_cpp_before_includeimplementation) ENABLED START*/
+#include <math.h>
+#include <numeric>
+/*PROTECTED REGION END*/
+
+#include "Cell.hpp"
+
+using namespace Add;
+
+OBJECT_MAKER(Cell)
+
+/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_impl_cpp_after_includeimplementation) ENABLED START*/
+//add user defined includes here
+/*PROTECTED REGION END*/
+
+void Cell::constructor() {
+	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQdelegated_constructor) ENABLED START*/
+	//add user defined code here
+	/*PROTECTED REGION END*/
+
+}
+void Cell::destructor() {
+	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQdelegated_destructor) ENABLED START*/
+	//add user defined code here
+	/*PROTECTED REGION END*/
+
+}
+void Cell::configure() throw (simtg::Exception) {
+	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQdelegated_configure) ENABLED START*/
+	//add user defined code here
+	/*PROTECTED REGION END*/
+
+}
+void Cell::serializeExt(simtg::SerializationStream& stream_)
+		throw (simtg::SerializationException) {
+	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQserializeExt) ENABLED START*/
+	//add user defined code here
+	/*PROTECTED REGION END*/
+
+}
+void Cell::step() throw (simtg::Exception) {
+	/*PROTECTED REGION ID(_bDafA9NTEe-HHfwhf86eRQ) ENABLED START*/
+	float alpha = 22 * (M_PI / 180);		// sunsensor angle, converted to rad
+	float I_max = 31 / 1000;			// max current in [A]
+	float v = 9.6;						// largest incident coeff [-]
+	float N_CSS = 2.3 * pow(10, -10)	// Noise coefficient
+	float N = static_cast<float>(rand())
+			/ (static_cast<float>(RAND_MAX / N_CSS)); // Noise
+
+	float n[4][3];
+	n[0] = {sin(alpha), cos(alpha), 0};		// +Y
+	n[1] = {sin(alpha), -cos(alpha), 0};	// -Y
+	n[2] = {sin(alpha), 0, cos(alpha)};		// +Z
+	n[3] = {sin(alpha), 0, -cos(alpha)};	// -Z
+
+	float dotProd = (_u_sun[0] * n[_axis][0]) +
+					(_u_sun[1] * n[_axis][1]) +
+					(_u_sun[2] * n[_axis][2]);
+
+	float lambda = 1 - pow( ((2 / M_PI) * acos(dotProd)), v );
+
+	_I_cell = ((I_max * (dotProd * lambda * _k * _e)) + N);
+	/*PROTECTED REGION END*/
+}
+
+void Cell::init() throw (simtg::Exception) {
+
+	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_startInit) ENABLED START*/
+	// add user defined code here
+	/*PROTECTED REGION END*/
+
+	AsyncModelBase::init();
+
+	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_init) ENABLED START*/
+	//add user defined code here
+	/*PROTECTED REGION END*/
+}
+
+/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_impl_cpp_end_extensionsimplementation) ENABLED START*/
+//add user defined includes here
+/*PROTECTED REGION END*/
+
+\end{lstlisting}
+
+
+\newpage
+\section{Example of test file for Single Photo Cell}
+\label{sec:test_example}
+The scenario is when the satellite is in eclipse and thus no current should be produced. Note for this test, we had to set the noise value to be 0 also.
+
+\begin{lstlisting}[frame=single,
+numbers=left, basicstyle=\tiny, language = C++]
+    package Add;
+
+import simtg.simops.base.SimopsException;
+
+public class TestCell1 extends BaseTest {
+
+	public static void main(String[] args) {
+		new TestCell1().run();
+	}
+
+	protected void test() throws SimopsException {
+		sim.createObject("Add", "Cell", "o");
+		// sim.activateMethodCyclically("o.step",1);
+		// sim.step();
+		
+		System.out.println("\n============ Test 1: zero all START ============");
+		// PARAMETERS
+		float test[] = { 0.0f, 0.0f, 0.0f };
+		float k[] = {0.0f, 0.0f, 0.0f, 0.0f};
+		int e = 0;	//0 if satellite in earth shadow...
+		sim.writeFloatArray("o.In.u_sun", test);
+		sim.writeFloatArray("o.In.k", k);
+		sim.writeInt("o.In.e", e);
+		sim.writeInt("o.In.axis", 0);
+		//sim.timeStep(1.);
+		// INPUTS DESC.
+		sim.init();
+		sim.step();
+		System.out.println("Beginning test with the following inputs: \n" 
+				+ "u_sun:\t{ 0, 0, 0 }\n" + "k:\t{0, 0, 0, 0}" + "\n" + "e:\t" + e);
+		// TEST CASE
+		if(sim.checkFloat("o.Out.I_cell", 0)) {System.out.println("Success!");} 
+		else {System.out.println("Test failed...");}
+		System.out.println("============ Test END ============\n");
+		
+		
+		System.out.println("\n============ Test 2: real values for u, k and e = 0 START ============");
+		// PARAMETERS
+		float test2[] = { 1.0f, 0.0f, 0.0f };
+		sim.writeFloatArray("o.In.u_sun", test2);
+		sim.writeFloatArray("o.In.k", k);
+		sim.writeInt("o.In.e", e);
+		sim.writeInt("o.In.axis", 0);
+		// INPUTS DESC.
+		sim.init();
+		sim.step();
+		System.out.println("Beginning test with the following inputs: \n" 
+				+ "u_sun:\t{ 1, 0, 0 }\n" + "k:\t{0, 0, 0, 0}" + "\n" + "e:\t" + e);
+		// TEST CASE
+		if(sim.checkFloat("o.Out.I_cell", 0)) {System.out.println("Success!");} 
+		else {
+			System.out.println("Test failed...");
+			System.out.println(sim.readFloat("o.Out.I_cell"));
+		}
+		System.out.println("============ Test END ============\n");
+
+		
+		System.out.println("\n============ Test 3: real values for u and k, e = 0 START ============");
+		// PARAMETERS
+		float k3[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+		sim.writeFloatArray("o.In.u_sun", test2);
+		sim.writeFloatArray("o.In.k", k3);
+		sim.writeInt("o.In.e", e);
+		sim.writeInt("o.In.axis", 0);
+		sim.init();
+		sim.step();
+		sim.timeStep(1.);
+		// INPUTS DESC.
+		System.out.println("Beginning test with the following inputs: \n" 
+				+ "u_sun:\t{ 1, 0, 0 }\n" + "k:\t{1, 1, 1, 1}" + "\n" + "e:\t" + e);
+		// TEST CASE
+		if(sim.checkFloat("o.Out.I_cell", 0)) {System.out.println("Success!");} 
+		else {System.out.println("Test failed...");}
+		System.out.println("============ Test END ============\n");
+		
+		System.out.println("\n============ Test 4: real and specific values for all START ============");
+		// PARAMETERS
+		int e4 = 1;
+		sim.writeFloatArray("o.In.u_sun", test2);
+		sim.writeFloatArray("o.In.k", k3);
+		sim.writeInt("o.In.e", e4);
+		sim.writeInt("o.In.axis", 0);
+		sim.init();
+		sim.step();
+		sim.timeStep(1.);
+		// INPUTS DESC.
+		System.out.println("Beginning test with the following inputs: \n" 
+				+ "u_sun:\t{ 1, 0, 0 }\n" + "k:\t{1, 1, 1, 1}" + "\n" + "e:\t" + e4);
+		// TEST CASE
+		if(sim.checkFloat("o.Out.I_cell", 0.010825224571338f)) {System.out.println("Success!");} 
+		else {System.out.println("Test failed...");}
+		System.out.println("============ Test END ============\n");
+		
+		
+		System.out.println("\n============ Test 5: specific values for all START ============");
+		// PARAMETERS
+		float test5[] = {0.0f, 1.0f, 1.0f};
+		sim.writeFloatArray("o.In.u_sun", test5);
+		sim.writeFloatArray("o.In.k", k3);
+		sim.writeInt("o.In.e", e4);
+		sim.writeInt("o.In.axis", 0);
+		sim.init();
+		sim.step();
+		sim.timeStep(1.);
+		// INPUTS DESC.
+		System.out.println("Beginning test with the following inputs: \n" 
+				+ "u_sun:\t{ 0, 1, 1 }\n" + "k:\t{1, 1, 1, 1}" + "\n" + "e:\t" + e4);
+		// TEST CASE
+		if(sim.checkFloat("o.Out.I_cell", 0.028742661027327f)) {System.out.println("Success!");} 
+		else {System.out.println("Test failed...");}
+		System.out.println("============ Test END ============\n");
+	}
+}
+
+	}
+\end{lstlisting}
 
 \end{appendices}
