@@ -43,6 +43,8 @@ public class TestCSS extends BaseTest {
 		float test2[] = { 1, 0, 1 };
 		sim.writeFloatArray("o.In.u_sun_SC", test2);
 		sim.writeInt("o.In.e", e);
+		sim.init();
+		sim.step();
 		sim.timeStep(1.);
 		// INPUTS DESC.
 		System.out.println("Beginning test with the following inputs: \n" 
@@ -65,6 +67,8 @@ public class TestCSS extends BaseTest {
 		int e3 = 1;
 		sim.writeFloatArray("o.In.u_sun_SC", test2);
 		sim.writeInt("o.In.e", e3);
+		sim.init();
+		sim.step();
 		sim.timeStep(1.);
 		// INPUTS DESC.
 		System.out.println("Beginning test with the following inputs: \n" 
