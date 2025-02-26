@@ -2,7 +2,8 @@
 %\usepackage[margin=2.5cm]{geometry}    % formatting 
 
 \documentclass[english, 12pt, a4paper, online]{article} 
-\usepackage{a4wide}
+%\usepackage{a4wide}
+\usepackage[margin=2.5cm]{geometry}
 
 \usepackage{fancyhdr}                  % headers and footers
 \usepackage{graphicx, placeins, subfig, float, floatflt, wrapfig}         % Required for inserting images
@@ -38,6 +39,9 @@
 
 \usepackage[toc,page]{appendix} % For appendices
 
+\newcommand{\TODO}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\PASS}[]{\textcolor{green}{PASS}}
+\newcommand{\FAIL}[]{\textcolor{red}{FAIL}}
 
 
 % Setup for page numbering so far
@@ -77,11 +81,8 @@
 \include{Text/5}
 \include{Text/6}
 
-% REFERENCES
-\addcontentsline{toc}{section}{References}
-\section*{References}
-\label{sec:references}
-\printbibliography[heading=none]
-
-%\include{Text/Appendix}
+% REFERENCES & APPENDIXES
+%\printbibliography
+%\label{sec:references}
+\include{Text/Appendix}
 \end{document}
