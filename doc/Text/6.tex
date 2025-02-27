@@ -4,9 +4,27 @@
 
 
 \subsection{Working Environment: VM and SimTG}
+%\TODO{Täytä jotain jos haluut, täs esimerkki, mut voi skipata myös}
+\textbf{List of the problems we have encountered}\\\\
+\textbf{Problem:} The virtual machine is not able to handle multiple processor cores.\\
+\textbf{Solution:} On the first installation, we had 20 cores enabled, and the VM was excessively slow. Only booting up takes more than 5 minutes. Switching to 2 cores fixes the issue.\\\\
+\textbf{Problem:} VM installation failing.\\
+\textbf{Solution:} Reinstalling the whole environment with the "unattended install" option\\\\
+\textbf{Problem:} No documentation for SimTG.\\
+\textbf{Solution:} Read the example projects.\\\\
+\textbf{Problem:} step() or stepTime(1) function not working.\\
+\textbf{Solution:} It seems like, if the model's values are not changing, the step function can not be called. In one of the example projects, we found a solution to call \\\textit{sim.activateMethodCyclically("o.step", 1)} once at the beginning to fix the issue.\\\\
+\textbf{Problem:} Renaming a model inside another model.\\
+\textbf{Solution:} There is a bug in SimTG, in which you can not rename a model inside a model, if it starts with the model's actual name. E.g. Renaming Cell model to "Cell2" does not work, but "myCell2" works.\\\\
+\textbf{Problem:} Can not exit error log after compiling.\\
+\textbf{Solution:} This is a very common bug in SimTG. Sometimes, after compiling, you can not open the console or problems tabs, because the program switches back to the error log tab immediately. It seems to be linked into clicking something during the compile, so the solution is not to touch anything while the program is compiling. \\\\
+\textbf{Problem:} Creating a new project causes a chain of problems with dependencies and configuration, making it very difficult to do.\\
+\textbf{Solution:} Create models and tests directly in the directory for the example project \texttt{Add} instead of trying to create a completely new directory for this project and re-configuring everything to work (e.g. some students experienced problems with libraries).\\\\
+\textbf{Problem:} SimTG uses C++03 or older.\\
+\textbf{Solution:} Use the over 20 years old, verbose and clumsy syntax. We could not find any option to enable for example, C++11, and the program does not have any documentation.\\\\
 
-List the problems we have had with SimTG
-- step() function problems
-- VM installation failing and needing to reinstall whole environment
+\subsection{Perspectives}
+SimTG provides the idea of models and diagrams, allowing a graphical programming interface. With this style, individual components can be created and unit tested with different values, before connecting the components into a larger body. This can make testing and working in a team (a pair, or more developers) much easier, when implemented properly. However, SimTG is a very outdated software. The interface looks old and it is not super intuitive, there are quite a lot of bugs, no documentation can be found on the internet, and the development is actually very slow for these reasons.
 
-Solution: Create models and tests directly in the directory for the example project \texttt{Add} instead of trying to create a completely new directory for this project and re-configuring everything to work (e.g. some students experienced problems with libraries).
+The objective of the project was to learn about the C++ language and satellite simulation. However, learning about SimTG and struggling with its unintuitive behaviour and bugs caused us to spend most of the time tackling problems caused by this software. Learning C++ and satellite simulation became secondary objectives.
+

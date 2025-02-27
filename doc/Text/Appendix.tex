@@ -35,21 +35,26 @@
         \\ \hline
         
         2025-01-29 & 4h & Exercise &  Last session in class.  \\ \hline
-        
-        Dates?     && Independent work & \\ \hline
 
+        2025-01-30 & 4h & Independent work & Learning to use SimTG, reading the code in the example projects. \\ \hline
+
+        2025-02-20 & 6h & Independent work & Working on the controller. \\ \hline
+        
         2025-02-21 & 4h & Independent work &  Finishing touches on Cell model + creating report file. \\ \hline
+
+        2025-02-24 & 8h & Independent work & Trying to get the satellite model working, testing individual models. \\ \hline
 
         2025-02-25 & 8h & Independent work &  Creation of CSS model + work on report. Problems with building project in SimTG... Creating testfiles for Cell and CSS. \\ \hline
 
-        2025-02-26 & 4h & Independent work &  Getting tests for Cell to pass, lot of debugging. Adding changes to Orientation and Baffle model, adding changes to CSS model. Tests for CSS currently not passing... \\ \hline
+        2025-02-26 & 6h & Independent work &  Getting tests for Cell to pass, lot of debugging. Implemented Baffle. Adding changes to Orientation and Baffle model, adding changes to CSS model. Finished tests for CSS. \\ \hline
 
+        2025-02-27 & 8h & Independent work & Working on the PID part of the controller, fixing issues with SimTG, testing the Satellite model. \\ \hline
         
         2025-02-28 & 2h & Exam &    \\ \hline
     \end{tabularx}
     \begin{tabularx}{\textwidth} {|X|}
          \hline
-         \textbf{Total hours logged: 36h scheduled + Xh independent work} \\ \hline
+         \textbf{Total hours logged: 36h scheduled + 44h independent work} \\ \hline
     \end{tabularx}
 
     
@@ -64,100 +69,17 @@
 
 
 \newpage
-\section{Source code for Cell}
-\begin{lstlisting}[frame=single,
-numbers=left, basicstyle=\tiny, language = C++]
-
-/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_impl_cpp_before_includeimplementation) ENABLED START*/
-#include <math.h>
-#include <numeric>
-/*PROTECTED REGION END*/
-
-#include "Cell.hpp"
-
-using namespace Add;
-
-OBJECT_MAKER(Cell)
-
-/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_impl_cpp_after_includeimplementation) ENABLED START*/
-//add user defined includes here
-/*PROTECTED REGION END*/
-
-void Cell::constructor() {
-	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQdelegated_constructor) ENABLED START*/
-	//add user defined code here
-	/*PROTECTED REGION END*/
-
-}
-void Cell::destructor() {
-	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQdelegated_destructor) ENABLED START*/
-	//add user defined code here
-	/*PROTECTED REGION END*/
-
-}
-void Cell::configure() throw (simtg::Exception) {
-	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQdelegated_configure) ENABLED START*/
-	//add user defined code here
-	/*PROTECTED REGION END*/
-
-}
-void Cell::serializeExt(simtg::SerializationStream& stream_)
-		throw (simtg::SerializationException) {
-	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQserializeExt) ENABLED START*/
-	//add user defined code here
-	/*PROTECTED REGION END*/
-
-}
-void Cell::step() throw (simtg::Exception) {
-	/*PROTECTED REGION ID(_bDafA9NTEe-HHfwhf86eRQ) ENABLED START*/
-	float alpha = 22 * (M_PI / 180);		// sunsensor angle, converted to rad
-	float I_max = 31 / 1000;			// max current in [A]
-	float v = 9.6;						// largest incident coeff [-]
-	float N_CSS = 2.3 * pow(10, -10)	// Noise coefficient
-	float N = static_cast<float>(rand())
-			/ (static_cast<float>(RAND_MAX / N_CSS)); // Noise
-
-	float n[4][3];
-	n[0] = {sin(alpha), cos(alpha), 0};		// +Y
-	n[1] = {sin(alpha), -cos(alpha), 0};	// -Y
-	n[2] = {sin(alpha), 0, cos(alpha)};		// +Z
-	n[3] = {sin(alpha), 0, -cos(alpha)};	// -Z
-
-	float dotProd = (_u_sun[0] * n[_axis][0]) +
-					(_u_sun[1] * n[_axis][1]) +
-					(_u_sun[2] * n[_axis][2]);
-
-	float lambda = 1 - pow( ((2 / M_PI) * acos(dotProd)), v );
-
-	_I_cell = ((I_max * (dotProd * lambda * _k * _e)) + N);
-	/*PROTECTED REGION END*/
-}
-
-void Cell::init() throw (simtg::Exception) {
-
-	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_startInit) ENABLED START*/
-	// add user defined code here
-	/*PROTECTED REGION END*/
-
-	AsyncModelBase::init();
-
-	/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_init) ENABLED START*/
-	//add user defined code here
-	/*PROTECTED REGION END*/
-}
-
-/*PROTECTED REGION ID(_bDafANNTEe-HHfwhf86eRQ_impl_cpp_end_extensionsimplementation) ENABLED START*/
-//add user defined includes here
-/*PROTECTED REGION END*/
-
-\end{lstlisting}
+\section{Example of source code for Cell}
+\lstinputlisting[frame=single,numbers=left, basicstyle=\tiny, language = c++]
+{src/cell.cpp}
 
 
-\newpage
 \section{Example of test file for Single Photo Cell}
 \label{sec:test_example}
 
 \lstinputlisting[frame=single,numbers=left, basicstyle=\tiny, language = java]
 {test/TestCell1.java}
+
+
 
 \end{appendices}
