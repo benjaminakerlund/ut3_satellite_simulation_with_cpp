@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="simtg.simmf.modeldefinition.1.1" xmlns:_1="smfnotation" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <ModelDefinitionDocument xmi:id="_GjTOkPBrEe-2qtLpG8DnDw">
+    <modelDefinition xmi:type="ModelDefinition" xmi:id="_GjTOkfBrEe-2qtLpG8DnDw" name="Controller" schedulingType="SYNCHRONOUS">
+      <typeNotation xmi:type="_1:TypeNotation" xmi:id="_GjTOkvBrEe-2qtLpG8DnDw">
+        <color xmi:type="_1:Color" xmi:id="_GjTOk_BrEe-2qtLpG8DnDw" red="192" green="192" blue="192"/>
+      </typeNotation>
+      <properties xmi:type="DataDef" xmi:id="_y7qtYPB6Ee-2qtLpG8DnDw" name="I_Y_plus" propCategory="INPUT" defaultValue="0.0">
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_y7xbEPB6Ee-2qtLpG8DnDw" order="1"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_1XMUoPB6Ee-2qtLpG8DnDw" name="I_Y_minus" propCategory="INPUT" defaultValue="0.0">
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_1XM7t_B6Ee-2qtLpG8DnDw" order="2"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_21BkkPB6Ee-2qtLpG8DnDw" name="I_Z_plus" propCategory="INPUT" defaultValue="0.0">
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_21CLovB6Ee-2qtLpG8DnDw" order="3"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_CM8fEPB7Ee-2qtLpG8DnDw" name="I_Z_minus" propCategory="INPUT" defaultValue="0.0">
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_CM9tMvB7Ee-2qtLpG8DnDw" order="4"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_MWpS8PB7Ee-2qtLpG8DnDw" name="u_Sun_CSS" propCategory="OUTPUT" defaultValue="0.0 0.0 0.0">
+        <size>3</size>
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_MWp6AvB7Ee-2qtLpG8DnDw" side="EAST" order="2"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_2QxDEPO-Ee-XaZPnwvXtWQ" name="y_angle" propCategory="OUTPUT" defaultValue="0.0">
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_2Q2ip_O-Ee-XaZPnwvXtWQ" side="EAST"/>
+      </properties>
+      <properties xmi:type="DataDef" xmi:id="_3iqv0PO-Ee-XaZPnwvXtWQ" name="z_angle" propCategory="OUTPUT" defaultValue="0.0">
+        <type xmi:type="SimpleType" href="platform:/plugin/simtg.simmf.workbench/types/types.xml#float"/>
+        <portNotation xmi:type="_1:PortNotation" xmi:id="_3islAPO-Ee-XaZPnwvXtWQ" side="EAST" order="1"/>
+      </properties>
+      <functions xmi:type="FuncDef" xmi:id="_GjTOlPBrEe-2qtLpG8DnDw" name="step" description="Default step method" throwException="simtg::Exception" visibility="PUBLIC" schedulable="true"/>
+    </modelDefinition>
+  </ModelDefinitionDocument>
+  <notation:Diagram xmi:id="_GjWR4PBrEe-2qtLpG8DnDw" type="Simmf" element="_GjTOkPBrEe-2qtLpG8DnDw" name="Controller.smf" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_GohFwPBrEe-2qtLpG8DnDw" type="2001" element="_GjTOkfBrEe-2qtLpG8DnDw" fontName="Ubuntu" fontHeight="12" bold="true" fillColor="12632256">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GohFwvBrEe-2qtLpG8DnDw" type="5003"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_GohFw_BrEe-2qtLpG8DnDw" type="7001"/>
+      <children xmi:type="notation:Node" xmi:id="_y7twsPB6Ee-2qtLpG8DnDw" type="3004" element="_y7qtYPB6Ee-2qtLpG8DnDw">
+        <children xmi:type="notation:DecorationNode" xmi:id="_y7vl4PB6Ee-2qtLpG8DnDw" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_y7vl4fB6Ee-2qtLpG8DnDw" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_y7uXwPB6Ee-2qtLpG8DnDw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_y7uXwfB6Ee-2qtLpG8DnDw" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_y7uXwvB6Ee-2qtLpG8DnDw" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y7uXw_B6Ee-2qtLpG8DnDw" x="-11" y="88"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_1XM7sPB6Ee-2qtLpG8DnDw" type="3004" element="_1XMUoPB6Ee-2qtLpG8DnDw">
+        <children xmi:type="notation:DecorationNode" xmi:id="_1XM7tfB6Ee-2qtLpG8DnDw" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_1XM7tvB6Ee-2qtLpG8DnDw" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_1XM7sfB6Ee-2qtLpG8DnDw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_1XM7svB6Ee-2qtLpG8DnDw" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_1XM7s_B6Ee-2qtLpG8DnDw" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1XM7tPB6Ee-2qtLpG8DnDw" x="-11" y="128"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_21BkkfB6Ee-2qtLpG8DnDw" type="3004" element="_21BkkPB6Ee-2qtLpG8DnDw">
+        <children xmi:type="notation:DecorationNode" xmi:id="_21CLoPB6Ee-2qtLpG8DnDw" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_21CLofB6Ee-2qtLpG8DnDw" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_21BkkvB6Ee-2qtLpG8DnDw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_21Bkk_B6Ee-2qtLpG8DnDw" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_21BklPB6Ee-2qtLpG8DnDw" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_21BklfB6Ee-2qtLpG8DnDw" x="-11" y="174"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_CM9GIPB7Ee-2qtLpG8DnDw" type="3004" element="_CM8fEPB7Ee-2qtLpG8DnDw">
+        <children xmi:type="notation:DecorationNode" xmi:id="_CM9tMPB7Ee-2qtLpG8DnDw" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_CM9tMfB7Ee-2qtLpG8DnDw" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_CM9GIfB7Ee-2qtLpG8DnDw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_CM9GIvB7Ee-2qtLpG8DnDw" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_CM9GI_B7Ee-2qtLpG8DnDw" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CM9GJPB7Ee-2qtLpG8DnDw" x="-11" y="226"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_MWpS8fB7Ee-2qtLpG8DnDw" type="3004" element="_MWpS8PB7Ee-2qtLpG8DnDw">
+        <children xmi:type="notation:DecorationNode" xmi:id="_MWp6APB7Ee-2qtLpG8DnDw" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_MWp6AfB7Ee-2qtLpG8DnDw" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_MWpS8vB7Ee-2qtLpG8DnDw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_MWpS8_B7Ee-2qtLpG8DnDw" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_MWpS9PB7Ee-2qtLpG8DnDw" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MWpS9fB7Ee-2qtLpG8DnDw" x="399" y="156"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_2Q2ioPO-Ee-XaZPnwvXtWQ" type="3004" element="_2QxDEPO-Ee-XaZPnwvXtWQ">
+        <children xmi:type="notation:DecorationNode" xmi:id="_2Q2ipfO-Ee-XaZPnwvXtWQ" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_2Q2ipvO-Ee-XaZPnwvXtWQ" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_2Q2iofO-Ee-XaZPnwvXtWQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_2Q2iovO-Ee-XaZPnwvXtWQ" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_2Q2io_O-Ee-XaZPnwvXtWQ" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Q2ipPO-Ee-XaZPnwvXtWQ" x="399" y="64"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_3ir98PO-Ee-XaZPnwvXtWQ" type="3004" element="_3iqv0PO-Ee-XaZPnwvXtWQ">
+        <children xmi:type="notation:DecorationNode" xmi:id="_3ir99fO-Ee-XaZPnwvXtWQ" type="5005">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_3ir99vO-Ee-XaZPnwvXtWQ" y="5"/>
+        </children>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_3ir98fO-Ee-XaZPnwvXtWQ"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_3ir98vO-Ee-XaZPnwvXtWQ" fontName="Ubuntu"/>
+        <styles xmi:type="notation:FillStyle" xmi:id="_3ir98_O-Ee-XaZPnwvXtWQ" fillColor="12632256"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3ir99PO-Ee-XaZPnwvXtWQ" x="399" y="120"/>
+      </children>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GohFwfBrEe-2qtLpG8DnDw" x="100" y="100"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_GjWR4fBrEe-2qtLpG8DnDw"/>
+  </notation:Diagram>
+</xmi:XMI>
